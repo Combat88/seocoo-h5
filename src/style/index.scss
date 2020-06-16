@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@function Px($px) {
+    @return $px / 750 * 10rem;
+}
+
+// 根元素大小
+html {
+    font-size: 36px;
+}
+
+/* 单行文本溢出 */
+@mixin spill() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+
+}
+
+/* 多行文本溢出 */
+@mixin spills($line) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+
+}
+
+// 取消滚动条
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0px
+    }
+}
+
+// 弹性布局
+.flex_row {
+    display: flex;
+}
+
+.flex_col {
+    display: flex;
+    flex-direction: column;
+}
+
+.row_both {
+    justify-content: space-between;
+}
+
+.row_center {
+    justify-content: center;
+}
+
+.col_center {
+    align-items: center;
+}
